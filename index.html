@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Junias Wölk — Photographer, Hamburg</title>
+<meta name="description" content="Junias Wölk is a photographer based in Hamburg. Selected work, shown in series.">
+<meta name="author" content="Junias Wölk">
+<meta name="theme-color" content="#EAE7E1">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<!-- PREVIEW: keeps search engines out while the photographs are placeholders. Remove at launch. -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- TODO before launch: set the real domain here and add og:image (1200×630 crop of a lead frame). -->
+<!-- <link rel="canonical" href="https://DOMAIN/"> -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Junias Wölk">
+<meta property="og:title" content="Junias Wölk — Photographer, Hamburg">
+<meta property="og:description" content="Selected work, shown in series.">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- The mark: the “ö” of Wölk. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23191A18'/%3E%3Ccircle cx='16' cy='19.5' r='6' fill='none' stroke='%23EAE7E1' stroke-width='3'/%3E%3Ccircle cx='11.6' cy='7.6' r='2.3' fill='%23EAE7E1'/%3E%3Ccircle cx='20.4' cy='7.6' r='2.3' fill='%23EAE7E1'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script>
+  /* Before first paint: tell the stylesheet that scripting is available. */
+  document.documentElement.className = 'js is-booting';
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Junias Wölk",
+  "jobTitle": "Photographer",
+  "address": { "@type": "PostalAddress", "addressLocality": "Hamburg", "addressCountry": "DE" },
+  "sameAs": ["https://www.instagram.com/juniaswoelk/"]
+}
+</script>
+</head>
+
+<body class="app">
+
+<a class="skip" href="#/info">Skip to information and contact</a>
+
+<!-- =====================================================================
+     INTERFACE — four corners. The centre belongs to the photographs.
+     ===================================================================== -->
+<header class="hud hud-top">
+  <div class="hud-id">
+    <a class="brand" id="brand" href="#/">Junias Wölk</a>
+    <p class="hud-role">Photographer, Hamburg</p>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a class="nav-link" href="#/" data-nav="work">Work</a>
+    <a class="nav-link" href="#/info" data-nav="info">Info</a>
+  </nav>
+</header>
+
+<p class="fpo mono" id="fpo" hidden>FPO — placeholder photographs</p>
+
+<!-- =====================================================================
+     THE TABLE — every photograph is a real link in a real list.
+     Frames are generated from assets/js/photos.js.
+     ===================================================================== -->
+<main class="stage" id="stage">
+  <h1 class="sr-only">Junias Wölk — photographer in Hamburg. Selected work.</h1>
+  <ul class="plane" id="plane" aria-label="Photographs. Drag, scroll or use the arrow keys to move across the table."></ul>
+</main>
+
+<div class="veil veil-top" aria-hidden="true"></div>
+<div class="veil veil-bottom" aria-hidden="true"></div>
+
+<!-- The focus reticle: one element, shared by every frame. -->
+<div class="reticle" id="reticle" aria-hidden="true">
+  <i class="reticle-c tl"></i><i class="reticle-c tr"></i><i class="reticle-c bl"></i><i class="reticle-c br"></i>
+  <span class="reticle-label mono"><b class="reticle-dot"></b><span id="reticle-text"></span></span>
+</div>
+
+<div class="hud hud-bottom">
+  <div class="context">
+    <p class="context-title" id="context" aria-live="polite"><span class="roll"><span class="roll-in">Selected Work</span></span></p>
+    <nav class="series mono" id="series" aria-label="Series"></nav>
+  </div>
+  <div class="readout mono" aria-hidden="true">
+    <span id="ro-pos">X 0000 · Y 0000</span>
+    <span id="ro-geo">53.5511° N · 9.9937° E</span>
+    <span>Hamburg <span id="ro-time">--:--</span></span>
+  </div>
+</div>
+
+<!-- =====================================================================
+     VIEWER — one photograph, in the dark.
+     ===================================================================== -->
+<section class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Photograph" tabindex="-1" hidden>
+  <div class="viewer-bg"></div>
+
+  <div class="viewer-stage" id="viewer-stage">
+    <figure class="viewer-fig"><div class="viewer-fig-in"><img class="lo" alt="" draggable="false"><img class="hi" alt="" draggable="false"></div></figure>
+    <figure class="viewer-fig"><div class="viewer-fig-in"><img class="lo" alt="" draggable="false"><img class="hi" alt="" draggable="false"></div></figure>
+    <button class="viewer-zone prev" type="button" data-cursor="Prev" aria-label="Previous photograph"></button>
+    <button class="viewer-zone next" type="button" data-cursor="Next" aria-label="Next photograph"></button>
+  </div>
+
+  <header class="viewer-top">
+    <a class="brand" href="#/" data-close>Junias Wölk</a>
+    <button class="viewer-close nav-link" type="button" id="viewer-close">Close</button>
+  </header>
+
+  <footer class="viewer-bottom">
+    <div class="viewer-meta">
+      <p class="viewer-count mono" id="v-count">01 / 01</p>
+      <h2 class="viewer-title" id="v-title"><span class="roll"><span class="roll-in">&nbsp;</span></span></h2>
+      <p class="viewer-cap" id="v-cap"></p>
+    </div>
+    <div class="rail" id="rail" aria-hidden="true">
+      <ul class="rail-strip" id="rail-strip"></ul>
+      <span class="rail-gate" id="rail-gate"></span>
+    </div>
+    <p class="viewer-spec mono" id="v-spec"></p>
+  </footer>
+
+  <p class="sr-only" id="v-live" aria-live="polite"></p>
+</section>
+
+<!-- =====================================================================
+     INFO — the linear version of the site.
+     Copy marked PLACEHOLDER is stand-in text. Replace it with his words.
+     ===================================================================== -->
+<section class="sheet" id="info" role="dialog" aria-modal="true" aria-labelledby="info-title" tabindex="-1" hidden>
+  <div class="sheet-in">
+
+    <header class="sheet-top">
+      <a class="brand" href="#/" data-close>Junias Wölk</a>
+      <button class="nav-link" type="button" id="info-close">Close</button>
+    </header>
+
+    <div class="sheet-lead">
+      <p class="mono sheet-eyebrow"><span>Info</span></p>
+      <!-- First sentence is fact. The second is PLACEHOLDER — it describes the stand-in series.
+           Lines are split by script at the current width, so just write the sentence. -->
+      <h2 id="info-title" class="lead" data-split>Junias Wölk is a photographer based in Hamburg. He works in series&nbsp;— on the water, in the city, and after hours.</h2>
+    </div>
+
+    <div class="sheet-cols">
+
+      <section class="col col-series" aria-labelledby="h-series">
+        <h3 class="mono col-h" id="h-series">Series</h3>
+        <ol class="index" id="index"></ol>
+      </section>
+
+      <section class="col" aria-labelledby="h-about">
+        <h3 class="mono col-h" id="h-about">About</h3>
+        <!-- PLACEHOLDER copy — two short paragraphs in his own voice go here. -->
+        <p>Commissioned and personal work: portraits, places and the hours in between. Available for editorial, commercial and private commissions in Hamburg and wherever the work is.</p>
+        <p>Prints and licensing on request.</p>
+        <p class="note mono" id="info-note" hidden>This is a working preview. Every photograph shown is a placeholder until the final selection is in.</p>
+      </section>
+
+      <section class="col" aria-labelledby="h-contact">
+        <h3 class="mono col-h" id="h-contact">Contact</h3>
+        <dl class="facts">
+          <div><dt class="mono">Instagram</dt><dd><a class="link" id="c-instagram" href="https://www.instagram.com/juniaswoelk/" target="_blank" rel="noopener">@juniaswoelk</a></dd></div>
+          <div id="c-email-row" hidden><dt class="mono">Email</dt><dd><a class="link" id="c-email" href="#"></a></dd></div>
+          <div><dt class="mono">Based in</dt><dd>Hamburg, Germany</dd></div>
+          <div><dt class="mono">Position</dt><dd class="mono">53.5511° N<br>9.9937° E</dd></div>
+        </dl>
+      </section>
+
+    </div>
+
+    <footer class="sheet-foot mono">
+      <span>© <span id="year">2026</span> Junias Wölk</span>
+      <span class="sheet-legal"><a class="link" href="impressum.html">Impressum</a><a class="link" href="datenschutz.html">Datenschutz</a></span>
+      <span>Site — <a class="link" href="https://janssonliam.de" target="_blank" rel="noopener">Liam Jansson</a></span>
+    </footer>
+
+  </div>
+</section>
+
+<!-- Cursor-following preview for the series list. -->
+<div class="peek" id="peek" aria-hidden="true"><img alt="" draggable="false"></div>
+
+<!-- =====================================================================
+     INTRO — the wordmark here becomes the one in the header.
+     ===================================================================== -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-bg"></div>
+  <p class="intro-word" id="intro-word">Junias Wölk</p>
+  <p class="intro-meta mono"><span>Photographer</span><span>Hamburg — 53.5511° N · 9.9937° E</span></p>
+  <p class="intro-count mono" id="intro-count">000</p>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-label mono" id="cursor-label"></span></div>
+
+<noscript>
+  <div class="nojs">
+    <p class="brand">Junias Wölk</p>
+    <p class="lead">Junias Wölk is a photographer based in Hamburg.</p>
+    <p>The gallery on this page needs JavaScript. His work is also on
+      <a class="link" href="https://www.instagram.com/juniaswoelk/">Instagram — @juniaswoelk</a>.</p>
+    <p class="mono"><a class="link" href="impressum.html">Impressum</a> · <a class="link" href="datenschutz.html">Datenschutz</a></p>
+  </div>
+</noscript>
+
+<script src="assets/js/photos.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

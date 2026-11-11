@@ -1,0 +1,11 @@
+.DS_Store
+
+# The repo root is what GitHub Pages serves, and the repo is public.
+# Only the site itself goes up.
+
+# source files — later his full-resolution exports, with EXIF/GPS. Never published.
+/originals/
+
+# local tooling and working notes — not site content
+/tools/
+/*.md
